@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Microsoft YaHei, Helvetica, Arial, sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b7b7b7;
+    border-radius: 114514rem;
+}
+
+body {
+    background-image: url('https://i3.wp.com/pomf2.lain.la/f/ev8k4jyi.jpg');
+    background-position: 70%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#base {
+    display: flex;
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#card {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 512px;
+    width: 90vw;
+    background-color: #ffffffde;
+    border-radius: 1.2rem;
+    min-height: 50vh;
+    min-height: 50dvh;
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+#card>.subtitle {
+    font-weight: 200;
+    font-size: .9rem;
+}
+
+#card>.title {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+#card>.text {
+    margin-top: 1.2rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#card>.text a {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 600;
+}
+
+#card>.text img {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+#card>.text svg {
+    display: inline-block;
+    height: 1em;
+    transform: translateY(2px);
+}
+
+.shadowBorder {
+    box-shadow: 0 0px 45px -3px #00000021;
+}
+
+.noBr {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
