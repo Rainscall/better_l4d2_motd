@@ -1,0 +1,16 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                // 指定兼容的浏览器版本
+                "targets": {
+                    "chrome": "18"
+                },
+                "useBuiltIns": "usage",
+                "corejs": "3.15.2",
+                "modules": false
+            }
+        ]
+    ]
+}

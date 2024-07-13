@@ -1,6 +1,7 @@
 import config from '../config';
 
 export async function home() {
+    config.base.innerHTML = '';
     let card = document.createElement('div');
     let subtitle = document.createElement('h2');
     let title = document.createElement('h2');
@@ -16,10 +17,10 @@ export async function home() {
     subtitle.classList.add('subtitle');
 
     text.innerHTML = `
-    <a href='https://steamcommunity.com/groups/imaginari'>steam组链接 ${config.icon.link}</a><br />
-    <a href='http://111.180.189.36:88/maplist.html'>三方图支持列表 ${config.icon.upRight}</a><br />
+    <a href='https://steamcommunity.com/groups/imaginari'>steam组链接</a><br />
+    <a href='http://111.180.189.36:88/maplist.html' class='upRight'>三方图支持列表</a><br />
     欢迎来Hatsune的猪圈群开黑:Q群723617400<br />
-    <img src='https://i3.wp.com/pomf2.lain.la/f/alv8vm4u.jpg'>
+    <img src='${require('../img/QRcode.jpg')}'>
     `
     text.classList.add('text');
 

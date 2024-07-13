@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const BuildInfoPlugin = require('build-info-webpack-plugin');
 
 module.exports = {
@@ -9,7 +8,9 @@ module.exports = {
     devServer: {
         server: 'https',
     },
-    entry: './src/entry.js',
+    entry: {
+        app: ['babel-polyfill', './src/entry.js']
+    },
     module: {
         rules: [
             {
@@ -23,14 +24,28 @@ module.exports = {
                             postcssOptions: {
                                 plugins: [
                                     'postcss-normalize',
-                                    'postcss-flexibility'
+                                    'autoprefixer',
+                                    'postcss-preset-env'
                                 ],
                             },
                         },
                     },
                 ]
-
-            }
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                type: 'asset/resource'
+            },
         ]
     },
 
