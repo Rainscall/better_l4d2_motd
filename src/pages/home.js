@@ -6,6 +6,7 @@ export async function home() {
     let subtitle = document.createElement('h2');
     let title = document.createElement('h2');
     let text = document.createElement('div');
+    let img = document.createElement('img');
 
     card.id = 'card';
     card.classList.add('shadowBorder');
@@ -20,12 +21,25 @@ export async function home() {
     <a href='https://steamcommunity.com/groups/imaginari'>steam组链接</a><br />
     <a href='http://111.180.189.36:88/maplist.html' class='upRight'>三方图支持列表</a><br />
     欢迎来Hatsune的猪圈群开黑:Q群723617400<br />
-    <img src='${require('../img/QRcode.jpg')}'>
     `
     text.classList.add('text');
+
+    img.src = require('../img/QRcode.jpg');
+    img.style.maxWidth = '50%';
+
+    text.appendChild(img);
 
     card.appendChild(title);
     card.appendChild(subtitle);
     card.appendChild(text);
     config.base.appendChild(card);
+
+    card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
+    img.addEventListener('load', () => {
+        card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
+    })
+
+    window.addEventListener('resize', e => {
+        card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
+    })
 }

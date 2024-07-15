@@ -94,7 +94,7 @@ body {
 }
 
 #card>.text img {
-    max-width: 50%;
+    max-width: 100%;
     overflow: hidden;
     border-radius: 1rem;
     margin-top: 1rem;
