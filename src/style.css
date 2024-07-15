@@ -24,15 +24,11 @@ body {
 }
 
 #base {
-    display: block;
-    min-height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+    display: -webkit-box;
     width: 100%;
     width: 100vw;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    -webkit-box-align: center;
 }
 
 #card {
@@ -50,8 +46,7 @@ body {
     padding: 1.8rem;
     overflow: hidden;
     flex-direction: column;
-    margin: 1rem 0;
-    position: absolute;
+    margin: 1rem;
     left: 1rem;
 }
 

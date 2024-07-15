@@ -33,13 +33,4 @@ export async function home() {
     card.appendChild(subtitle);
     card.appendChild(text);
     config.base.appendChild(card);
-
-    card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
-    img.addEventListener('load', () => {
-        card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
-    })
-
-    window.addEventListener('resize', e => {
-        card.style.top = `${(parseFloat(getComputedStyle(config.base).height) - parseFloat(getComputedStyle(card).height)) / 2}px`;
-    })
 }
