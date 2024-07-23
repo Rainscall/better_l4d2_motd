@@ -39,14 +39,10 @@ body {
     width: 90vw;
     background-color: #ffffffde;
     border-radius: 1.2rem;
-    min-height: 50%;
-    min-height: 50vh;
-    min-height: 50dvh;
     backdrop-filter: blur(8px);
     padding: 1.8rem;
     overflow: hidden;
     flex-direction: column;
-    margin: 1rem;
     left: 1rem;
 }
 

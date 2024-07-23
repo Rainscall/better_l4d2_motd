@@ -33,4 +33,26 @@ export async function home() {
     card.appendChild(subtitle);
     card.appendChild(text);
     config.base.appendChild(card);
+
+    let t = null;
+    resizer();
+    window.addEventListener('resize', () => {
+        if (t !== null) {
+            clearTimeout(t);
+        }
+        t = setTimeout(resizer, 150);
+    });
+    function resizer() {
+        if (card.clientHeight + card.offsetTop + document.body.clientWidth * 0.3 > document.body.clientWidth) {
+            card.style.removeProperty('marginLeft');
+            card.style.margin = '1rem';
+            return;
+        }
+        card.style.removeProperty('margin');
+        if (card.offsetTop < 16) {
+            card.style.margin = `1rem`;
+        } else {
+            card.style.marginLeft = `${card.offsetTop}px`;
+        }
+    }
 }
