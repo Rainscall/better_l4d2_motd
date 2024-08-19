@@ -16,19 +16,23 @@
     border-radius: 114514rem;
 }
 
-body {
+.cardContainer {
     background-image: url('./img/kita.jpg');
     background-position: 70%;
     background-size: cover;
     background-attachment: fixed;
-}
-
-#base {
     display: -webkit-box;
     width: 100%;
     width: 100vw;
     position: relative;
     -webkit-box-align: center;
+}
+
+.host {
+    background-image: url('./img/host.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 #card {

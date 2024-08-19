@@ -1,13 +1,15 @@
 import config from '../config';
 
 export async function home() {
-    config.base.innerHTML = '';
+    let container = document.createElement('div');
     let card = document.createElement('div');
     let subtitle = document.createElement('h2');
     let title = document.createElement('h2');
     let text = document.createElement('div');
     let img = document.createElement('img');
 
+    container.classList.add('fullVh');
+    container.classList.add('cardContainer');
     card.id = 'card';
     card.classList.add('shadowBorder');
 
@@ -32,7 +34,8 @@ export async function home() {
     card.appendChild(title);
     card.appendChild(subtitle);
     card.appendChild(text);
-    config.base.appendChild(card);
+    container.appendChild(card)
+    config.base.appendChild(container);
 
     img.addEventListener('load', () => {
         let t = null;
