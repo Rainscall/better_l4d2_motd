@@ -4,6 +4,10 @@ const base = document.createElement('div');
 const config = {
     entryNode: document.body,
     base: base,
+    backend: {
+        endpoint: '//motd.kitaserver.site/backend',
+        id: 0,
+    },
 }
 
 const entryNode = config.entryNode;

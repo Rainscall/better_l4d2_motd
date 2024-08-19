@@ -81,6 +81,10 @@
     content: url(./icons/upRight.svg);
 }
 
+#card>.text small {
+    font-weight: 200;
+}
+
 #card>.text a {
     color: inherit;
     text-decoration: inherit;
@@ -88,7 +92,7 @@
     position: relative;
 }
 
-#card>.text img {
+#card img {
     max-width: 100%;
     overflow: hidden;
     border-radius: 1rem;
