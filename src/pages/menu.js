@@ -1,10 +1,13 @@
 import config from '../config';
 import { resize } from '../utils';
 
+menu();
+
 export async function menu() {
-    try {
-        document.getElementById('menuDialog').remove();
-    } catch (error) { }
+    if (document.getElementById('menuDialog')) {
+        closeWindow();
+    }
+
     let base = document.createElement('div');
     let card = document.createElement('div');
 
@@ -15,17 +18,11 @@ export async function menu() {
 
     let content = document.createElement('div');
 
-    content.innerText = '此功能正在施工.......';
+    content.innerText = '此功能正在施工中.......';
     content.style.height = '8rem'
 
     close.classList.add('headerButtom');
     close.classList.add('icon-close');
-
-    close.addEventListener('click', closeWindow);
-    base.addEventListener('click', closeWindow);
-    card.addEventListener('click', e => {
-        e.stopPropagation();
-    })
 
     title.innerText = '菜单';
 
@@ -43,7 +40,15 @@ export async function menu() {
     base.appendChild(card);
     config.entryNode.prepend(base);
     resize();
+
     function closeWindow() {
-        document.getElementById('menuDialog').remove();
+        let element = document.getElementById('menuDialog');
+        element.parentElement.removeChild(element);
     }
+
+    close.addEventListener('click', closeWindow);
+    base.addEventListener('click', closeWindow);
+    card.addEventListener('click', e => {
+        e.stopPropagation();
+    })
 }

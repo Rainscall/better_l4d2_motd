@@ -68,8 +68,9 @@ header .headerButtom {
     right: 0;
     width: 1em;
     height: 1em;
-    top: calc(50% - 0.5em);
+    top: 30%;
     cursor: pointer;
+    user-select: none;
 }
 
 .icon-menu::after {

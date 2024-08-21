@@ -5,9 +5,6 @@ const BuildInfoPlugin = require('build-info-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    devServer: {
-        server: 'https',
-    },
     entry: {
         app: ['babel-polyfill', './src/entry.js']
     },
