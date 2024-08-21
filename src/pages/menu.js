@@ -1,8 +1,6 @@
 import config from '../config';
 import { resize } from '../utils';
 
-menu();
-
 export async function menu() {
     if (document.getElementById('menuDialog')) {
         closeWindow();
