@@ -1,4 +1,5 @@
 import config from '../config';
+import { menu } from './menu';
 import { formatNumber, myFetch } from '../utils';
 
 export async function home() {
@@ -8,6 +9,13 @@ export async function home() {
     let title = document.createElement('h2');
     let text = document.createElement('div');
     let img = document.createElement('img');
+    let header = document.createElement('header');
+    let menuIcon = document.createElement('div');
+
+    menuIcon.classList.add('headerButtom');
+    menuIcon.classList.add('icon-menu');
+
+    menuIcon.addEventListener('click', menu);
 
     container.classList.add('fullVh');
     container.classList.add('cardContainer');
@@ -30,8 +38,10 @@ export async function home() {
     img.src = require('../img/QRcode.jpg');
     img.style.maxWidth = '50%';
 
-    card.appendChild(title);
-    card.appendChild(subtitle);
+    header.appendChild(title);
+    header.appendChild(subtitle);
+    header.appendChild(menuIcon);
+    card.appendChild(header);
     card.appendChild(text);
     card.appendChild(img);
     container.appendChild(card)
@@ -67,7 +77,7 @@ export async function home() {
             if (r.status != 'SUCCESS') {
                 return;
             }
-            text.innerHTML += `<small>击杀总数：${formatNumber(r.message.data)}</small>`;
+            text.innerHTML += `击杀总数：${formatNumber(r.message.data)}`;
         })
         .catch(e => {
             console.error(e);

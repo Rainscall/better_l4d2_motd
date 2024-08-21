@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     font-family: Microsoft YaHei, Helvetica, Arial, sans-serif;
 }
@@ -23,7 +24,6 @@
     background-attachment: fixed;
     display: -webkit-box;
     width: 100%;
-    width: 100vw;
     position: relative;
     -webkit-box-align: center;
 }
@@ -40,7 +40,6 @@
     box-sizing: border-box;
     max-width: 480px;
     width: 90%;
-    width: 90vw;
     background-color: #ffffffde;
     border-radius: 1.2rem;
     backdrop-filter: blur(8px);
@@ -50,14 +49,79 @@
     left: 1rem;
 }
 
-#card>.subtitle {
+#card .subtitle {
     font-weight: 200;
     font-size: .9rem;
 }
 
-#card>.title {
+#card .title {
     font-weight: 400;
     font-size: 1.5rem;
+}
+
+#card header {
+    position: relative;
+}
+
+header .headerButtom {
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    top: calc(50% - 0.5em);
+    cursor: pointer;
+}
+
+.icon-menu::after {
+    content: url(./icons/menu.svg);
+    display: block;
+}
+
+.icon-close::after {
+    content: url(./icons/close.svg);
+    display: block;
+}
+
+#menuDialog {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 114514;
+    background-color: #0000006d;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+#menuDialog .card {
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 512px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: #00000022 0 0 20px 4px;
+}
+
+#menuDialog h2 {
+    font-weight: 400;
+    position: relative;
+}
+
+#menuDialog>.card>* {
+    padding: 0 2rem;
+}
+
+#menuDialog>.card header {
+    padding: 1rem 2rem;
+    background-color: #00000011;
+}
+
+#menuDialog>.card header>h2::after {
+    content: 'MENU';
+    margin-left: .5rem;
+    font-weight: 600;
+    color: #00000022;
 }
 
 #card>.text {
