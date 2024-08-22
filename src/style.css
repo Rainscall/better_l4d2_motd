@@ -113,6 +113,10 @@ header .headerButtom {
     padding: 0 2rem;
 }
 
+#menuDialog>.card>*:last-child {
+    margin-bottom: 1rem;
+}
+
 #menuDialog>.card header {
     padding: 1rem 2rem;
     background-color: #00000011;
@@ -123,6 +127,32 @@ header .headerButtom {
     margin-left: .5rem;
     font-weight: 600;
     color: #00000022;
+}
+
+#menuDialog>.card .input {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+input {
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-top: .3rem;
+    padding: .2rem .4rem;
+    background-color: #00000009;
+    border-radius: .4rem;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#menuDialog>.card ul li {
+    display: -webkit-box;
+    -webkit-box-pack: justify;
 }
 
 #card>.text {
