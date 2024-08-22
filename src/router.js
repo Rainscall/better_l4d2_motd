@@ -1,7 +1,7 @@
 import config from "./config";
 import { home } from "./pages/home";
 import { host } from "./pages/host";
-import { notFound } from "./pages/notfound";
+import { fallback } from "./pages/fallback";
 import { list } from "./pages/list";
 import * as utils from './utils'
 
@@ -25,7 +25,7 @@ export function router() {
             break;
         }
         default: {
-            notFound();
+            fallback();
             break;
         }
     }

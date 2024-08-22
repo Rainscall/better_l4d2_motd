@@ -1,7 +1,7 @@
 import config from '../config';
 import { resize } from '../utils';
 
-export function notFound() {
+export function fallback() {
     let base = document.createElement('div');
     base.innerText = '此页面不存在或正在施工，点击回到主页';
     base.style.fontSize = '2rem';
