@@ -26,7 +26,7 @@ export async function menu() {
             'path': '/list',
         },
         {
-            'name': '服务器列表',
+            'name': '服务器列表 Lite',
             'path': '/servers',
         },
     ]

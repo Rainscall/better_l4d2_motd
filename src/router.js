@@ -3,6 +3,7 @@ import { home } from "./pages/home";
 import { host } from "./pages/host";
 import { fallback } from "./pages/fallback";
 import { list } from "./pages/list";
+import { servers } from "./pages/servers";
 import * as utils from './utils'
 
 export function router() {
@@ -22,6 +23,10 @@ export function router() {
         }
         case 'list': {
             list();
+            break;
+        }
+        case 'servers': {
+            servers();
             break;
         }
         default: {
