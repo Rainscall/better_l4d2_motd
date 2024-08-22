@@ -3,6 +3,15 @@ export function resize() {
     for (let i = 0; i < element.length; i++) {
         element[i].style.minHeight = `${window.innerHeight}px`;
     }
+
+    const e = document.getElementsByClassName('fullVhMax');
+    for (let i = 0; i < e.length; i++) {
+        if (e[i].dataset.vhMax) {
+            e[i].style.maxHeight = `${window.innerHeight * e[i].dataset.vhMax / 100}px`;
+        } else {
+            e[i].style.maxHeight = `${window.innerHeight}px`;
+        }
+    }
 }
 
 export function myFetch(url, options = {}) {

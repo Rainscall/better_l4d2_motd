@@ -1,6 +1,8 @@
 import config from "./config";
 import { home } from "./pages/home";
 import { host } from "./pages/host";
+import { notFound } from "./pages/notfound";
+import { list } from "./pages/list";
 import * as utils from './utils'
 
 export function router() {
@@ -16,6 +18,14 @@ export function router() {
         }
         case 'host': {
             host();
+            break;
+        }
+        case 'list': {
+            list();
+            break;
+        }
+        default: {
+            notFound();
             break;
         }
     }
