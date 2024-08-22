@@ -103,6 +103,7 @@ export async function menu() {
             resultArea.appendChild(ul);
             lock = false;
             input.removeAttribute('disabled');
+            input.value = '';
         })
     })();
 
