@@ -138,5 +138,3 @@ export async function menu() {
         e.stopPropagation();
     })
 }
-
-menu()
