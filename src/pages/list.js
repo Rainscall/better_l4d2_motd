@@ -65,6 +65,7 @@ export async function list() {
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
     let fields = [
+        '序号',
         '名称',
         '普感击杀',
         '特感击杀',
@@ -84,9 +85,11 @@ export async function list() {
     })
     table.appendChild(thead);
 
+    let n = 1;
     r.forEach((e, i) => {
         let tr = document.createElement('tr');
         let data = {
+            n: n++,
             name: e.Name,
             ci: e.KillCI,
             si: e.KillSI,
