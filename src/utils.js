@@ -91,3 +91,10 @@ export function formatNumber(num) {
         });
     });
 })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+window.requestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame;

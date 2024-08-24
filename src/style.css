@@ -102,6 +102,7 @@ header .headerButtom {
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: #00000022 0 0 20px 4px;
+    will-change: left, top, opacity;
 }
 
 #menuDialog h2 {

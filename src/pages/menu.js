@@ -77,4 +77,56 @@ export async function menu() {
     card.addEventListener('click', e => {
         e.stopPropagation();
     })
+
+    let start;
+    try {
+        start = performance.now();
+    } catch (error) {
+        start = Date.now(); //傻逼chrome18，raf的参数和现在的不一样，polyfill也不能用
+    }
+    const duration = 235; // ms
+
+    // 缓动函数：先加速后减速
+    function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // 初始位置（左下角）
+    const startX = 0;
+    const startY = viewportHeight - card.offsetHeight;
+
+    // 目标位置（正中间）
+    const endX = (viewportWidth - card.offsetWidth) / 2;
+    const endY = (viewportHeight - card.offsetHeight) / 2;
+
+    function animate(time) {
+        const elapsed = time - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutQuad(progress);
+
+        const currentX = startX + (endX - startX) * easedProgress;
+        const currentY = startY + (endY - startY) * easedProgress;
+
+        card.style.left = `${currentX}px`;
+        card.style.top = `${currentY}px`;
+        card.style.opacity = easedProgress;
+        card.style.position = 'absolute';
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        } else {
+            card.style.left = ``;
+            card.style.top = ``;
+            card.style.opacity = '1';
+            card.style.position = '';
+            //chrome18似乎没有办法删掉属性
+
+            card.removeAttribute('style');
+        }
+    }
+
+    requestAnimationFrame(animate);
 }
