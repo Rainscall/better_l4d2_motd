@@ -1,7 +1,7 @@
 import config from '../config';
 import { myFetch, resize } from '../utils';
 
-export async function menu() {
+export async function menu(e) {
     if (document.getElementById('menuDialog')) {
         closeWindow();
     }
@@ -84,7 +84,7 @@ export async function menu() {
     } catch (error) {
         start = Date.now(); //傻逼chrome18，raf的参数和现在的不一样，polyfill也不能用
     }
-    const duration = 235; // ms
+    const duration = 255; // ms
 
     // 缓动函数：先加速后减速
     function easeInOutQuad(t) {
@@ -95,8 +95,10 @@ export async function menu() {
     const viewportHeight = window.innerHeight;
 
     // 初始位置（左下角）
-    const startX = 0;
-    const startY = viewportHeight - card.offsetHeight;
+    // const startX = 0;
+    // const startY = viewportHeight - card.offsetHeight;
+    const startX = e.clientX - (card.offsetWidth / 2);
+    const startY = e.clientY - card.offsetHeight;
 
     // 目标位置（正中间）
     const endX = (viewportWidth - card.offsetWidth) / 2;
@@ -114,6 +116,7 @@ export async function menu() {
         card.style.top = `${currentY}px`;
         card.style.opacity = easedProgress;
         card.style.position = 'absolute';
+        card.style.webkitTransform = `rotate(${20 - (20 * easedProgress)}deg)`
 
         if (progress < 1) {
             requestAnimationFrame(animate);

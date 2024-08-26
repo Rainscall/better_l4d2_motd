@@ -99,5 +99,19 @@ export async function servers() {
 
     table.appendChild(tbody);
     content.appendChild(table);
+    content.addEventListener('mousewheel', e => {
+        e.preventDefault();
+        const stepLength = 50;
+        let offset = (e.wheelDelta > 0 ? -1 : 1) * stepLength;
+        let x = e.wheelDeltaX != 0;
+
+        if (x) {
+            content.scrollLeft += offset;
+        } else {
+            content.scrollTop += offset;
+        }
+
+        console.log(offset);
+    })
     resize();
 }

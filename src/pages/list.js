@@ -42,6 +42,21 @@ export async function list() {
     container.appendChild(card)
     config.base.appendChild(container);
 
+    content.addEventListener('mousewheel', e => {
+        e.preventDefault();
+        const stepLength = 50;
+        let offset = (e.wheelDelta > 0 ? -1 : 1) * stepLength;
+        let x = e.wheelDeltaX != 0;
+
+        if (x) {
+            content.scrollLeft += offset;
+        } else {
+            content.scrollTop += offset;
+        }
+
+        console.log(offset);
+    })
+
     let r = await myFetch(`${config.backend.endpoint}/list?backend=${config.backend.id}`, {
         method: 'POST',
         body: JSON.stringify({
