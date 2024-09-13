@@ -216,8 +216,7 @@ tr.odd {
 }
 
 tr:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #00000030;
 }
 
 #card>.text {

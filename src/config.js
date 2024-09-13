@@ -5,7 +5,7 @@ const config = {
     entryNode: document.body,
     base: base,
     backend: {
-        endpoint: '//motd.kitaserver.site/backend',
+        endpoint: '//110.42.35.5:88/backend',
         id: 0,
     },
 }
