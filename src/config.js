@@ -5,7 +5,7 @@ const config = {
     entryNode: document.body,
     base: base,
     backend: {
-        endpoint: '//110.42.35.5:88/backend',
+        endpoint: '//14.103.101.172:88/backend',
         id: 0,
     },
 }
