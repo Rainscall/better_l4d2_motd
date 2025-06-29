@@ -26,7 +26,7 @@ export async function servers() {
     title.innerText = '服务器列表 Lite';
     title.classList.add('title');
 
-    subtitle.innerText = '完整版：https://list.kitaserver.site/#/0/serverList';
+    subtitle.innerText = '完整版：https://www.kitasoda.com/#/serverList';
     subtitle.classList.add('subtitle');
 
     content.classList.add('text');

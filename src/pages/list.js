@@ -26,7 +26,7 @@ export async function list() {
     title.innerText = '排行榜 Lite';
     title.classList.add('title');
 
-    subtitle.innerText = '完整版：https://list.kitaserver.site/#/0/list';
+    subtitle.innerText = '完整版：https://www.kitasoda.com/#/list';
     subtitle.classList.add('subtitle');
 
     content.classList.add('text');
