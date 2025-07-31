@@ -42,7 +42,7 @@ export async function servers() {
     container.appendChild(card)
     config.base.appendChild(container);
 
-    let r = await myFetch(`${config.backend.endpoint}/getServerDetailAll?backend=${config.backend.id}`)
+    let r = await myFetch(`${config.backend.endpoint}/getServerDetailAll`)
         .then(r => r.json())
         .catch(e => {
             console.error(e);

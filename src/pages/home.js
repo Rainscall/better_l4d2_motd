@@ -71,7 +71,7 @@ export async function home() {
         }
     })
 
-    myFetch(`${config.backend.endpoint}/getTotalZombieKill?backend=${config.backend.id}`)
+    myFetch(`${config.backend.endpoint}/getTotalZombieKill`)
         .then(r => r.json())
         .then(r => {
             if (r.status != 'SUCCESS') {

@@ -57,7 +57,7 @@ export async function list() {
         console.log(offset);
     })
 
-    let r = await myFetch(`${config.backend.endpoint}/list?backend=${config.backend.id}`, {
+    let r = await myFetch(`${config.backend.endpoint}/list`, {
         method: 'POST',
         body: JSON.stringify({
             "page": 0,
@@ -74,7 +74,7 @@ export async function list() {
             content.innerHTML = '网络错误';
         })
 
-    r = r.message.data;
+    r = r.message;
 
     let table = document.createElement('table');
     let thead = document.createElement('thead');

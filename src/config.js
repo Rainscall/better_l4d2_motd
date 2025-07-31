@@ -6,7 +6,6 @@ const config = {
     base: base,
     backend: {
         endpoint: '//192.140.166.155:88/backend',
-        id: 0,
     },
 }
 
